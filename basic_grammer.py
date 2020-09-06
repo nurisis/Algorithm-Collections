@@ -1,6 +1,8 @@
 ##########
 # Array
 ##########
+from bisect import bisect_left, bisect_right
+
 n = 10
 empty_list = [2] * n
 print(empty_list)
@@ -133,6 +135,7 @@ print(f"replacement_result : {replacement_result}")
 
 import heapq
 
+
 # heap =>  priority queue.
 # ascending sort with min heap
 def min_heap_sort(iterable):
@@ -159,8 +162,16 @@ def max_heap_sort(iterable):
 
     return result
 
+
 heap_result = max_heap_sort([1,3,5,7,6,4,2])
 print(f"heap_result: {heap_result}")
 
 
 # bisect - binary search
+a = [1, 2, 4, 4, 8]
+x = 4
+# Find the leftmost index in list a to insert data x into, maintaining sorted order
+print(bisect_left(a, 4))
+# Find the rightmost index in list a to insert data x into, maintaining sorted order
+print(bisect_right(a, 4))
+
